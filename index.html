@@ -38,23 +38,24 @@
 include &lt;stdio.h&gt;
 include &lt;string.h&gt;
 
-nt main(){
-bool loop = true;
-char input[20];
-char check = "We out here"
-while(loop){
-	printf("What it do my guy?");
-	fgets(input, sizeof input, stdin);
-	input[strcspn(input, "\n")] = 0;
-	if(strcmp(carray,check)){
-		printf("Bro same");
+int main(){
+	bool loop = true;
+	char input[20];
+	char check = "We out here"
+	while(loop){
+		printf("What it do my guy?");
+		fgets(input, sizeof input, stdin);
+		input[strcspn(input, "\n")] = 0;
+		if(strcmp(carray,check)){
+			printf("Bro same");
+		}
+		else{
+			printf("Damn, you wildin");
+			loop = false;
+		}
 	}
-	else{
-		printf("Damn, you wildin");
-		loop = false;
-	}
+	return 0;
 }
-return 0;
 			
 					</code></pre>
 				</figure>
