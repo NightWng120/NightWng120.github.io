@@ -1,5 +1,6 @@
 const colors = ["red", "orange", "yellow", "green", "blue", "violet"];
 var computer_colors = [];
+var attempts = 10;
 for(let i = 0; i < 4; i++){
 	computer_colors.push(colors[Math.floor(Math.random()*6)]);
 }
@@ -38,7 +39,7 @@ function main(){
 
 function newPage(){
 	document.body.innerHTML = '';
-	document.body.innerHTML ='<h1>Mastermind</h1> <div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>' 
+	document.body.innerHTML =`<h1>Mastermind</h1> <p> <a href="rules.html">Rules</a> </p> <h3 id="attempts">Attempts Left: ${attempts}</h3><div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>` 
 }
 
 function printSquares(){
@@ -105,6 +106,12 @@ function submit(){
 	let pegs = [];
 	let guessColors = [];
 	const currentGuesses = document.querySelectorAll(".currentGuess");
+	const h3 = document.getElementById("attempts");
+	console.log(h3);
+
+	attempts-=1;
+	h3.innerHTML = `Attempts Left: ${attempts}`;
+
 	for(let i = 0; i < 4; i++){
 		guessColors.push(currentGuesses[i].style.backgroundColor);
 	}
@@ -150,8 +157,9 @@ function submit(){
 	}
 	
 	if(black === 4){
-		console.log("Player Wins!");
+		//console.log("Player Wins!");
 		computer_colors = [];
+		attempts = 10;
 
 		for(let i = 0; i < 4; i++){
 			computer_colors.push(colors[Math.floor(Math.random()*6)]);
@@ -159,15 +167,40 @@ function submit(){
 		}
 		const divControls = document.getElementById('controls');
 		const reset = document.createElement('button');
+		const h2 = document.createElement('H2');
+		h2.innerText = "Player Wins!";
 		reset.setAttribute("type", "Button");
 		reset.setAttribute("onclick", "reset()");
 		reset.setAttribute("style", "background-color: #ffffff;width: 100;height: 20px");
 		reset.innerText = "reset";
 		divControls.appendChild(reset);
-		alert("Player Wins!");
+		document.body.appendChild(h2);
+		//alert("Player Wins!");
 		return;
 	}
-	printSquares();
+	else if(attempts == 0){
+		computer_colors = [];
+		attempts = 10;
+
+		for(let i = 0; i < 4; i++){
+			computer_colors.push(colors[Math.floor(Math.random()*6)]);
+			console.log(computer_colors[i]);
+		}
+		const divControls = document.getElementById('controls');
+		const reset = document.createElement('button');
+		const h2 = document.createElement('H2');
+		h2.innerText = "Computer Wins :(";
+		reset.setAttribute("type", "Button");
+		reset.setAttribute("onclick", "reset()");
+		reset.setAttribute("style", "background-color: #ffffff;width: 100;height: 20px");
+		reset.innerText = "reset";
+		divControls.appendChild(reset);
+		document.body.appendChild(h2);
+		return;
+	}
+	else{
+		printSquares();
+	}
 }
 
 main();
