@@ -119,10 +119,14 @@ function submit(){
 	for(const [index, element] of guessColors.entries()){
 		if(element === computer_colors[index]){
 			memo[index] = element;
-			black+=1;
+			black++;
 		}
 	}
+
 	for(const [index, element] of guessColors.entries()){
+		if(computer_colors[index] === element){
+			continue;
+		}
 		for(const [num, letter] of computer_colors.entries()){
 			if(num in memo){
 				continue;
