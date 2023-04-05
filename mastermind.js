@@ -65,7 +65,7 @@ while(loop){
 			}
 		}
 
-		console.log(`Black: ${black}\nWhite: ${white}`);
+//		console.log(`Black: ${black}\nWhite: ${white}`);
 
 		for(let i = 0; i < black; i++){
 			pegs[indices[i]] = '0';
