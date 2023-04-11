@@ -107,14 +107,22 @@ function submit(){
 	let guessColors = [];
 	const currentGuesses = document.querySelectorAll(".currentGuess");
 	const h3 = document.getElementById("attempts");
+
+
+	for(let i = 0; i < 4; i++){
+		console.log(currentGuesses[i].style.backgroundColor);
+		if(currentGuesses[i].style.backgroundColor == 'rgb(255, 255, 255)'){
+			clearScreen();
+			alert("Not enough colors");
+			return;
+		}
+		guessColors.push(currentGuesses[i].style.backgroundColor);
+	}
+
 	console.log(h3);
 
 	attempts-=1;
 	h3.innerHTML = `Attempts Left: ${attempts}`;
-
-	for(let i = 0; i < 4; i++){
-		guessColors.push(currentGuesses[i].style.backgroundColor);
-	}
 
 	for(const [index, element] of guessColors.entries()){
 		if(element === computer_colors[index]){
