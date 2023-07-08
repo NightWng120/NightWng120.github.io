@@ -10,3 +10,5 @@ Ideas for website in general
 - Could look at exist css templates for inspiration or to possibly just steal and use
 - Could add more css customization to make site more presentable
 - Add more animationy js code
+
+yur mum
