@@ -1,0 +1,12 @@
+Ideas for database entries
+- Users and all info relating to that
+- Tally games played
+- Tally wins
+- Tally colors used
+- Average score
+- Your best score
+
+Ideas for website in general
+- Could look at exist css templates for inspiration or to possibly just steal and use
+- Could add more css customization to make site more presentable
+- Add more animationy js code
