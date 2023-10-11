@@ -11,7 +11,7 @@ function main(){
 	const colorButtons = document.getElementById("colors");
 	const controlButtons = document.getElementById("controls");
 	const linebreak = document.createElement("br");
-	for(color of colors){
+	for(let color of colors){
 		const button = document.createElement('button');
 		button.setAttribute('type', 'Button');
 		button.setAttribute('onclick', 'addColor(\'' + color + '\')');
@@ -39,7 +39,7 @@ function main(){
 
 function newPage(){
 	document.body.innerHTML = '';
-	document.body.innerHTML =`<h1>Mastermind</h1> <p> <a href="rules.html">Rules</a> </p> <h3 id="attempts">Attempts Left: ${attempts}</h3><div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>` 
+	document.body.innerHTML =`<h1>Mastermind</h1> <p> <a href="rules.html">Rules</a> <a href="notifier.html">Notifier</a> </p> <h3 id="attempts">Attempts Left: ${attempts}</h3><div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>` 
 }
 
 function printSquares(){
@@ -78,7 +78,7 @@ function reset(){
 
 function clearScreen(){
 	const squares = document.getElementsByClassName('currentGuess');
-	for(square of squares){
+	for(let square of squares){
 		if(square.style.backgroundColor != "rgb(255, 255, 255)"){
 			square.style.backgroundColor = "rgb(255, 255, 255)";
 		}
@@ -90,7 +90,7 @@ function addColor(color){
 	const squares = document.getElementsByClassName('currentGuess');
 
 	//console.log("We out here as %s", color);
-	for(square of squares){
+	for(let square of squares){
 		if(square.style.backgroundColor === "rgb(255, 255, 255)"){
 			square.style.backgroundColor = color;
 			break;
@@ -213,3 +213,4 @@ function submit(){
 }
 
 main();
+// I just typed this shit out on ed, the best text editor known to man babiee

@@ -20,9 +20,9 @@ password.setAttribute('name', 'password');
 password.setAttribute('maxlength', '12');
 password.setAttribute('required', true);
 
-newpage = () => {
-	document.body.innerHTML = '';
-	document.body.innerHTML <h1>Login/Signup Page</h1> <br>
+let newpage = () => {
+	document.body.innerHTML = '<h1>Login/Signup Page</h1> <br>';
+	//document.body.innerHTML <h1>Login/Signup Page</h1> <br>
 
 }
 
