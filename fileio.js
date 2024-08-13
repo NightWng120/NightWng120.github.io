@@ -2,7 +2,7 @@ const fs = require("fs");
 const prompt = require('prompt-sync')({sigint: true});
 let scores = require("./highscores");
 console.log(scores['Trever']);
-name = prompt("Enter Name: ");
+let name = prompt("Enter Name: ");
 if(name === "clear"){
 	scores = [];
 	fs.writeFile("highscores.json", JSON.stringify(scores), err => { 
@@ -11,7 +11,7 @@ if(name === "clear"){
 	console.log("cleared file");
 }
 else {
-	if(name in scores){
+	if(score in scores){
 		scores[name] = score;
 		console.log(scores);
 	}
