@@ -1,5 +1,29 @@
 {
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "name": "nightwng120.github.io",
+  "version": "1.0.0",
+  "main": "colors.js",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightWng120/NightWng120.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NightWng120/NightWng120.github.io/issues"
+  },
+  "homepage": "https://github.com/NightWng120/NightWng120.github.io#readme",
+  "description": ""
 }
