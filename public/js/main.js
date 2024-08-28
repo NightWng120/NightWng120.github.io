@@ -39,7 +39,7 @@ function main(){
 
 function newPage(){
 	document.body.innerHTML = '';
-	document.body.innerHTML =`<h1>Mastermind</h1> <p> <a href="rules.html">Rules</a> </p> <h3 id="attempts">Attempts Left: ${attempts}</h3><div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>` 
+	document.body.innerHTML =`<h1>Mastermind</h1> <p> <a href="index.html">Login</a> <a href="rules.html">Rules</a> </p> <h3 id="attempts">Attempts Left: ${attempts}</h3><div id="colors"></div> <br> <div id="playArea"></div> <br> <div id="controls"></div>` 
 }
 
 function printSquares(){
